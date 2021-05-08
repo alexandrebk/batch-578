@@ -1,7 +1,6 @@
 require_relative "recipe"
 class Controller
   def initialize(repository, view)
-    # todo 
     @view = view
     @repository = repository
   end
@@ -12,13 +11,16 @@ class Controller
   end
 
   def create
+    list
     name =  @view.ask_for("name")
     description = @view.ask_for("description")
     recipe = Recipe.new(name: name, description: description)
     @repository.add_recipe(recipe)
-    list
   end
 
   def destroy
+    list
+    index = @view.ask_for_index
+    @repository.destroy(index)
   end
 end
