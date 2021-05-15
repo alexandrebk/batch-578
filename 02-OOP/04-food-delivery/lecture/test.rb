@@ -37,11 +37,13 @@ p marie.room.object_id
 
 # #<Room:0x00007f910c1097e0 @name=nil, @capacity=2, @patients=[#<Patient:0x00007f910c109948 @name="marie", @cured=false>, #<Patient:0x00007f910c1098a8 @name="maria", @cured=false>]>
 
-
+RoomRepository.new
+# => load_csv 
 
 class PatientRepository 
 
-  def initialize
+  def initialize(room_repository, csv_file)
+
     #....
     load_csv
   end
@@ -55,9 +57,9 @@ class PatientRepository
       row[:cured] = row[:cured] == "true"  # Convert column to boolean
       patient = Patient.new(row)
       
-      room = @room_repository.find(room_id)
+      room_toto = @room_repository.find(room_id)
       # instance de room ayant le room_id correspondant
-      patient.room = room
+      patient.room = room_toto
 
     end
   end
