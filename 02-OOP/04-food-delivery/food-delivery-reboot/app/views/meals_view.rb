@@ -1,4 +1,4 @@
-class MealView
+class MealsView
   def display(meals)
     # TODO
     meals.each do |meal|

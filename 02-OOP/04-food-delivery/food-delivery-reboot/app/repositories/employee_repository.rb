@@ -1,21 +1,32 @@
-require_relative "../models/employee"
 require "csv"
-require_relative "../repositories/record_repository"
+require_relative "../models/employee"
 
-class EmployeeRepository < RecordRepository
+class EmployeeRepository
+  def initialize(csv_file)
+    @csv_file = csv_file
+    @employees = []
+    load_csv if File.exist?(@csv_file)
+  end
+
+  def all_riders
+    @employees.select { |employee| employee.rider? }
+  end
+
+  def find(id)
+    @employees.find { |employee| employee.id == id }
+  end
+
+  def find_by_username(username)
+    @employees.find { |employee| employee.username == username }
+  end
+
   private
 
-  def csv_headers
-    ["id","name"]
-  end
-
-  def element_to_row(employee)
-    [employee.id, employee.name, employee.price]
-  end
-
-  def row_to_element(row)
-    row[:id]    = row[:id].to_i
-    # row[:] = row[:].to_i
-    Employee.new(row)
+  def load_csv
+    csv_options = { headers: :first_row, header_converters: :symbol }
+    CSV.foreach(@csv_file, csv_options) do |row|
+      row[:id] = row[:id].to_i
+      @employees << Employee.new(row)
+    end
   end
 end

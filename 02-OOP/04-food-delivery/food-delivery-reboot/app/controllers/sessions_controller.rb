@@ -1,20 +1,19 @@
+require_relative "../views/sessions_view"
+
 class SessionsController
-  def initialize
-    # TODO
+  def initialize(employee_repository)
+    @sessions_view = SessionsView.new
+    @employee_repository = employee_repository
   end
-  
+
   def sign_in
-    p 'toto'
-    # 1. ask for username
-    username = @view.ask_for("username")
-    password = @view.ask_for("password")
+    username = @sessions_view.ask_for(:username)
+    password = @sessions_view.ask_for_password
     employee = @employee_repository.find_by_username(username)
-    return employee if employee && employee.password ==  password
-    @view.wrong_credentials
-    # 2. ask for password
-    # 3. verifier si on a un employee avec le username donné
-    # 4. du coup alller l'employee dans le repo
-    # 4. verifier si le password de l'employee match avec le password saisi
+    p employee
+    return employee if employee && employee.password == password
+
+    @sessions_view.print_wrong_credentials
     sign_in
   end
 end

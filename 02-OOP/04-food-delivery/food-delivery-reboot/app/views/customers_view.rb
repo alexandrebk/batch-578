@@ -1,4 +1,4 @@
-class CustomerView
+class CustomersView
   def display(customers)
     # TODO
     customers.each do |customer|
