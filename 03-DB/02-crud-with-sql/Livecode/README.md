@@ -10,3 +10,6 @@ You are given a `tasks.db` database with one task (id = 1), a `task.rb` file to 
 * Implement the READ logic to retrieve all tasks (what type of method is it?)
 * Implement the DESTROY logic on a task
 
+# Récap
+
+![Task](./task.png)
