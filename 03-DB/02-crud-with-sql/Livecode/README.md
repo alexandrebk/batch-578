@@ -1,6 +1,6 @@
 # SQLite Task Manager
 
-Let’s build a Task class capable of CRUD against a SQL table tasks.
+Let’s build a Task class (with title and done) capable of CRUD against a SQL table tasks.
 
 You are given a `tasks.db` database with one task (id = 1), a `task.rb` file to complete and a `test.rb` to test your code.
 
