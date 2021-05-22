@@ -36,13 +36,56 @@ Attention, ne jamais toucher à l ID lors d'une création et d'une mise à jour
 
 ### UPDATE
 
+Mettre à jour toutes les données
+
 ```sql
-UPDATE doctors SET age = 40, name = 'John Smith' WHERE id = 3
+UPDATE doctors SET age = 40, name = 'John Smith';
 ```
+
+Mettre à jour une seule donnée
 
 ```sql
 UPDATE doctors SET age = 40, name = 'John Smith' WHERE id = 3
 ```
+
+### DELETE
+
+Supprime TOUS les docteurs
+
+```sql
+DELETE FROM doctors;
+```
+
+Supprime UN docteur (celui qui a l'ID 3)
+
+```sql
+DELETE FROM doctors WHERE id = 3;
+```
+
+Supprime plusieurs docteurs (ceux qui ont l'id 3 et 2)
+
+```sql
+DELETE FROM doctors WHERE id = 3;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
