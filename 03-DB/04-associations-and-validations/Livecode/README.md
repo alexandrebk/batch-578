@@ -2,6 +2,12 @@
 
 ### Q1 - What’s a relational database?
 
+A relational database is a set of tables linked to each other by a system of primary keys and foreign keys
+
+### Q3 && Q4
+
+[Load schema](schema.xml)
+
 ### Q6 - What’s the SQL query to get books written before 1985?
 
 ```sql
