@@ -1,0 +1,13 @@
+.banner {
+  background-image: url('../../images/background.jpg');
+  height: 500px;
+  color: #FFF;
+}
+
+.banner .container {
+  padding: 160px 48px 0px 48px;
+}
+
+.banner p {
+  margin-bottom: 48px;
+}
