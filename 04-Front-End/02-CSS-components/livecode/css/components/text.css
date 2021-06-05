@@ -1,0 +1,10 @@
+.subtitle {
+  color: #002ec1;
+  font-weight: 700;
+}
+
+.quote {
+  color: rgb(100, 100, 100);
+  text-transform: uppercase;
+  margin: 48px 0;
+}

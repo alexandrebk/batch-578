@@ -1,0 +1,10 @@
+.bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgb(100, 100, 100);
+}
+
+.bullet-blue {
+  background-color: #002ec1;
+}
